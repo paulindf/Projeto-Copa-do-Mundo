@@ -1,0 +1,21 @@
+﻿@model Projeto_Copa_do_Mundo.Models.SelecaoVM
+
+@{
+    ViewBag.Title = "Confirma a remoção?";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<fieldset>
+    <div class="display-label">
+        <strong>País</strong> @Html.DisplayFor(model => model.Pais)
+        <br />
+        <strong>Técnico</strong> @Html.DisplayFor(model => model.Tecnico)
+    </div>
+</fieldset>
+
+@using (Html.BeginForm())
+{
+    <p><input type="submit" value="Remover" /></p>
+}

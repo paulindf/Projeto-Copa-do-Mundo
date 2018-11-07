@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Cadastrar novo jogador";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Cadastrar", "Jogador", null, FormMethod.Post, new { autocomplete = "off" }))
+{
+    @Html.Partial("_Formulario")
+
+    <div><input type="submit" value="Gravar" /></div>
+}

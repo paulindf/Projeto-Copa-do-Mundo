@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2002
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Projeto Copa do Mundo", "Projeto Copa do Mundo\Projeto Copa do Mundo.csproj", "{D80F5DD3-CEE9-4C4C-842E-2934E01863D6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D80F5DD3-CEE9-4C4C-842E-2934E01863D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D80F5DD3-CEE9-4C4C-842E-2934E01863D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D80F5DD3-CEE9-4C4C-842E-2934E01863D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D80F5DD3-CEE9-4C4C-842E-2934E01863D6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {34C6AB9E-68C8-468C-A34E-49312558FF9B}
+	EndGlobalSection
+EndGlobal

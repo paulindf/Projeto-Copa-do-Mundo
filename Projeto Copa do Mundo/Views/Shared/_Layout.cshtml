@@ -1,0 +1,90 @@
+﻿@using Projeto_Copa_do_Mundo.Models;
+
+@{
+    var usuario = Session["usuario"] as UsuarioVM;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div id="dvPagina">
+        <header>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p class="site-title">
+                        <div>
+                            <div style="float:left"><img class="logo" alt="Logomarca power" src="~/Content/images/logo.png" width="60" height="60"/></div>
+                            <div>
+
+                                Aprendizado....
+
+                                @if (usuario != null)
+                                {
+                                    <div style="float:right"><br />Olá @usuario.Nome (@Html.ActionLink("Sair", "Sair", "Login"))</div>
+                                }
+                                else
+                                {
+                                    <span>Sessão expirou</span>
+                                }
+                            </div>
+                        </div>
+                    </p>
+                </div>
+
+                <br /><br />
+                <div class="float-right">
+                    <nav>
+                        <ul id="menu">
+                            <li>@Html.ActionLink("Cadastrar seleções", "Create", "Selecao", null, new { @class = "xbotao" })</li>
+                            <li>@Html.ActionLink("Listar seleções", "Index", "Selecao", null, new { @class = "xbotao" })</li>
+
+
+                            <li>@Html.ActionLink("Cadastrar jogadores", "Cadastrar", "Jogador", null, new { @class = "xbotao" })</li>
+                            <li>@Html.ActionLink("Listar jogadores", "Listar", "Jogador", null, new { @class = "xbotao" })</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <div>@TempData["mensagem"]</div>
+
+        <div id="body">
+            @RenderSection("featured", required: false)
+            <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>
+        </div>
+
+        <footer style="margin-top:200px">
+            <div class="content-wrapper">
+                <div class="float-right">
+                    <ul id="social">
+                        <li>
+                            <a href="http://facebook.com" class="facebook">Facebook</a>
+                        </li>
+                        <li>
+                            <a href="http://twitter.com" class="twitter">Twitter</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="float-left" style="text-align:center">
+                    <p>&copy; @DateTime.Now.Year - Copa do Mundo</p>
+                </div>
+
+            </div>
+        </footer>
+    </div>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

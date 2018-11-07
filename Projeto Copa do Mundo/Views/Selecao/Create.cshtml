@@ -1,0 +1,39 @@
+﻿@model Projeto_Copa_do_Mundo.Models.SelecaoVM
+
+@{
+    ViewBag.Title = "Cadastro de Seleções";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Create", "Selecao", null, FormMethod.Post, new { autocomplete = "off"}))
+{
+    @Html.ValidationSummary(true);
+    @Html.AntiForgeryToken();
+
+    <fieldset>
+        @*País*@
+        <div class="editor-label">@Html.LabelFor(e => e.Pais)</div>
+        <div class="editor-field">
+            @Html.EditorFor(e => e.Pais)
+            @Html.ValidationMessageFor(m => m.Pais)
+        </div>
+
+        @*Nome do técnico*@
+        <div class="editor-label">@Html.LabelFor(e => e.Tecnico)</div>
+        <div class="editor-field">
+            @Html.EditorFor(e => e.Tecnico)
+            @Html.ValidationMessageFor(m => m.Tecnico)
+        </div>
+
+        <p>
+            <input type="submit" value="Gravar" />
+        </p>
+
+    </fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/blundles/jqueryval")
+}

@@ -1,0 +1,38 @@
+﻿@model Projeto_Copa_do_Mundo.Models.UsuarioVM
+
+@{
+    ViewBag.Title = "Novo usuário";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Novo", "Usuario", null, FormMethod.Post, new { autocomplete = "off" }))
+{
+    Html.ValidationSummary();
+    Html.AntiForgeryToken();
+
+    //Nome
+    <div>
+        <div>@Html.LabelFor(model => model.Nome)</div>
+        <div>@Html.TextBoxFor(model => model.Nome)</div>
+        <div>@Html.ValidationMessageFor(model => model.Nome)</div>
+    </div>
+
+    //Email
+    <div>
+        <div>@Html.LabelFor(model => model.Email)</div>
+        <div>@Html.TextBoxFor(model => model.Email)</div>
+        <div>@Html.ValidationMessageFor(model => model.Email)</div>
+    </div>
+
+    //Senha
+    <div>
+        <div>@Html.LabelFor(model => model.Senha)</div>
+        <div>@Html.PasswordFor(model => model.Senha)</div>
+        <div>@Html.ValidationMessageFor(model => model.Senha)</div>
+    </div>
+
+    <div><input type="submit" value="Gravar" /></div>
+}
+

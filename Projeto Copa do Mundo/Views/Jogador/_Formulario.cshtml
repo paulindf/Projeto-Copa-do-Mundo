@@ -1,0 +1,51 @@
+﻿@using Projeto_Copa_do_Mundo.Models
+
+@model JogadorVM
+
+@{
+    Html.ValidationSummary();
+    Html.AntiForgeryToken();
+
+    IEnumerable<SelecaoVM> selecoes = ViewData["selecoes"] as IEnumerable<SelecaoVM>;
+}
+
+<fieldset>
+    
+    @if (null != Model)
+    {
+        Html.HiddenFor(model => model.Id);
+    }
+
+    <div>
+        @Html.LabelFor(model => model.Nome)
+        @Html.TextBoxFor(model => model.Nome)
+        @Html.ValidationMessageFor(model => model.Nome)
+    </div>
+
+    <div>
+        @Html.LabelFor(model => model.Posicao)
+        @Html.TextBoxFor(model => model.Posicao)
+        @Html.ValidationMessageFor(model => model.Posicao)
+    </div>
+
+    <div>
+        @Html.LabelFor(model => model.Nascimento)
+        @Html.TextBoxFor(model => model.Nascimento)
+        @Html.ValidationMessageFor(model => model.Nascimento)
+    </div>
+
+    <div>
+        @Html.LabelFor(model => model.Selecao)
+        @Html.DropDownListFor(
+           model => model.SelecaoId,
+           new SelectList(
+               selecoes.Select(x => new { Value = x.Id, Text = x.Pais }),
+               "Value",
+               "Text"
+               )
+           )
+
+        @Html.ValidationMessageFor(model => model.Selecao)
+    </div>
+</fieldset>
+
